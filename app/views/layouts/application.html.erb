@@ -4,10 +4,63 @@
 <head>
   <title>Bc</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel='stylesheet' type='text/css' href='app/assets/stylesheets/bootstrap.css'>
+  <!-- Bootstrap Core CSS -->
+    <link href="app/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="app/assets/stylesheets/heroic-features.css" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <% if user_signed_in? %>
+                Logged in as <strong><%= current_user.email %></strong>.
+                <a class="navbar-brand" href="/annonces">Les annonces</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/annonces/new">Créer une annonce</a>
+                    </li>
+                    <li>
+                        <a href="/users/edit">Changer mon profil</a>
+                    </li>
+                    <li>
+                        <a href="/users/sign_out" data-method='delete'>Déconnexion</a>
+                    </li>
+                </ul>
+            </div>
+            <% else %>
+            <a class="navbar-brand" href="/annonces">Les annonces</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/users/sign_up">Créer un Compte</a>
+                    </li>
+                    <li>
+                        <a href="/users/sign_in">Se Connecter</a>
+                    </li>
+                </ul>
+            <% end %>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
 <%= yield %>
 

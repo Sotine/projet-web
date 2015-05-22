@@ -1,6 +1,44 @@
 <p id="notice"><%= notice %></p>
+<!-- Page Content -->
+    <div class="container">
 
-<h1>Listing Annonces</h1>
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>Bienvenue sur le Boncoin de l'Iien</h1>
+            <p> etre Iien c'est bien, partager ses biens c'est mieux</p>
+            <!--<p><a class="btn btn-primary btn-large">Call to action!</a>
+            </p>-->
+        </header>
+
+<hr>
+<%= @annonces.each do |annonce| %>
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3><%=annonce.titre%></h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <!--<h3>Feature Label</h3>-->
+                        <p><%=annonce.description%></p>
+                        <p>
+                            <a href="#" class="btn btn-default">J'aimerais en savoir plus</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+<% end %>
+<!-- <h1>Listing Annonces</h1>
+
+
 
 <table>
   <thead>
@@ -28,6 +66,6 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
-<%= link_to 'New Annonce', new_annonce_path %>
+

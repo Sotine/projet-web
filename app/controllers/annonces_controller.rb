@@ -10,6 +10,7 @@ class AnnoncesController < ApplicationController
   # GET /annonces/1
   # GET /annonces/1.json
   def show
+    @annonces = Annonce.find(params[:id])
   end
 
   # GET /annonces/new
