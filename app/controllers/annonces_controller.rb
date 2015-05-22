@@ -26,6 +26,10 @@ class AnnoncesController < ApplicationController
   # POST /annonces.json
   def create
     @annonce = Annonce.new(annonce_params)
+    @annonce.user_id = current_user.id
+    # @user = User.find(session[:user_id])
+    #annonce = @user.annonces.build(params[:annonce])
+    #annonce.save
 
     respond_to do |format|
       if @annonce.save
