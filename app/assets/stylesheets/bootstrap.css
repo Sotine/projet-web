@@ -1080,6 +1080,7 @@ th {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 html {
   font-size: 10px;
 
@@ -1090,7 +1091,11 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background: url('shopping.jpg');
+  background-size:cover;
+  margin:0;
+}
+
 }
 input,
 button,

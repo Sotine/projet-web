@@ -1,16 +1,19 @@
-<h2>Change your password</h2>
+<div class="container">
+    <header class="jumbotron hero-spacer">
+    <center>
+    <h2>Change your password</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, "New password" %><br />
+    <%= f.label :"Nouveau mot de passe", "New password" %><br />
     <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.label :"Comfirmez votre nouveau mot de passe", "Confirm new password" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -20,3 +23,6 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+</center>
+</header>
+</div>
