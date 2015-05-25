@@ -21,10 +21,18 @@
   <%= @annonce.prix %>€
 </p>
 
-<p>
+<div id="galerie-minimaliste">
+<div>
+<p tabindex="1"><img src="<%=@annonce.image%>" alt="<%=@annonce.titre%>" /></p>
+<p tabindex="1"><img src="<%=@annonce.image2%>" alt="<%=@annonce.titre%>" /></p>
+<p tabindex="1"><img src="<%=@annonce.image3%>" alt="<%=@annonce.titre%>" /></p>
+</div>
+</div>
+
+<!--<p>
   <strong>Image:</strong> <br><br>
   <img src="<%=@annonce.image%>" alt="<%=@annonce.titre%>" style="max-width:60%; height:auto">
-</p>
+</p>-->
 
 <p>
   <strong>Auteur:</strong>
