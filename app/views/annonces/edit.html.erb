@@ -7,9 +7,13 @@
 
 
 <%= render 'form' %>
+<h3>Supprimer mon annonce</h3>
 
-<%= link_to 'Voir', @annonce %> |
-<%= link_to 'Retour', annonces_path %>
+<p><%= button_to "Supprimer", annonce_path(@annonce), data: { confirm: "Etes-vous sûrs ?" }, method: :delete %></p>
+
+<br>
+<br>
+<%= link_to 'Retour', @annonce %>
 
 
 <%else%>
