@@ -34,7 +34,7 @@
 	<%= link_to 'Editer', edit_annonce_path(@annonce) %> 
 	<%else%> 
 	<%= link_to 'Contacter', 
-	@annonce %>
+	contact_path(@annonce) %>
 	<%end%> |
 	<%= link_to 'Retour', annonces_path %>
 	<%else%>

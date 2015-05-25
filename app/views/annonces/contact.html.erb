@@ -1,7 +1,13 @@
 <div class="container">
     <header class="jumbotron hero-spacer">
     <center>
+    <% if current_user.id == @annonce.user_id %>
+    <p> C'est ton annonce, si tu veux te contacter tu n'as qu'a prendre un mirroir</p>
+
+
+<%else%>
 <h2>Contact de l'annonceur</h2>
+<br>
 
 <p>
   <strong>Auteur:</strong>
@@ -17,10 +23,11 @@
   <strong>Mail :</strong>
   <%= @annonce.user.email %>
 </p>
+<br>
+<%= link_to 'Retour', @annonce %> 
 
-<%= render 'form' %>
 
-<%= link_to 'Retour', edit_annonce_path(@annonce) %> 
+<% end %>
 
 </center>
 </header>
