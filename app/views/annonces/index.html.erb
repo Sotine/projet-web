@@ -29,9 +29,9 @@
                 <div class="thumbnail">
                     <!--<img src="http://placehold.it/800x500" alt="">-->
                     <% if annonce.image.present? %>
-                    <img src="<%=annonce.image%>" alt="<%=annonce.titre%>" style="width:400px;height:250px">
+                    <img src="<%=annonce.image%>" alt="<%=annonce.titre%>" style="max-width:100%; height:auto">
                     <% else %>
-                      <%= image_tag "800x500.gif", alt: annonce.titre %>
+                      <%= image_tag "800x500.gif"%>
                     <% end %>
                     
                     
@@ -47,7 +47,7 @@
 <% else %>
 <!-- Title -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-9">
                 <h3><%=annonce.titre%></h3>
             </div>
         </div>

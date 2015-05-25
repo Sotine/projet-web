@@ -26,6 +26,7 @@ class AnnoncesController < ApplicationController
   def contact
     @annonces = Annonce.find(params[:id])
   end
+
   # POST /annonces
   # POST /annonces.json
   def create

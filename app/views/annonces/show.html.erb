@@ -22,8 +22,8 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <img src="<%=@annonce.image%>" alt="<%=@annonce.titre%>" style="width:400px;height:250px">
+  <strong>Image:</strong> <br><br>
+  <img src="<%=@annonce.image%>" alt="<%=@annonce.titre%>" style="max-width:60%; height:auto">
 </p>
 
 <p>
@@ -34,7 +34,7 @@
 	<%= link_to 'Editer', edit_annonce_path(@annonce) %> 
 	<%else%> 
 	<%= link_to 'Contacter', 
-	contact_path(@annonce) %>
+	@annonce %>
 	<%end%> |
 	<%= link_to 'Retour', annonces_path %>
 	<%else%>
