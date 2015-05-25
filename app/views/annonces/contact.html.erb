@@ -1,0 +1,27 @@
+<div class="container">
+    <header class="jumbotron hero-spacer">
+    <center>
+<h2>Contact de l'annonceur</h2>
+
+<p>
+  <strong>Auteur:</strong>
+  <%= @annonce.user.prenom %> <%= @annonce.user.nom %>
+</p>
+
+<p>
+  <strong>Téléphone :</strong>
+  <%= @annonce.user.numero %>
+</p>
+
+<p>
+  <strong>Mail :</strong>
+  <%= @annonce.user.email %>
+</p>
+
+<%= render 'form' %>
+
+<%= link_to 'Retour', edit_annonce_path(@annonce) %> 
+
+</center>
+</header>
+</div>
