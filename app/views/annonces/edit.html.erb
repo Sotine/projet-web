@@ -1,6 +1,10 @@
+<% if current_user.id == @annonce.user_id %>
 <h1>Editing Annonce</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @annonce %> |
 <%= link_to 'Back', annonces_path %>
+<%else%>
+<p> Vous ne pouvez modifier cette annonce car ce n'est pas la votre </p>
+<% end %>

@@ -7,6 +7,7 @@ class AnnoncesController < ApplicationController
     @annonces = Annonce.all
   end
 
+
   # GET /annonces/1
   # GET /annonces/1.json
   def show

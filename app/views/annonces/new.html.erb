@@ -1,6 +1,9 @@
-
+<% if user_signed_in? %>
 <h1>New Annonce</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', annonces_path %>
+<%else %>
+<p> Vous ne pouvez créez d'annonce sans etre connecté </p>
+<%end%>

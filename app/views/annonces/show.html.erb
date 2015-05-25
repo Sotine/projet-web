@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -27,3 +28,6 @@
 
 <%= link_to 'Edit', edit_annonce_path(@annonce) %> |
 <%= link_to 'Back', annonces_path %>
+<%else%>
+<p> Vous ne pouvez voir les détails de cette annonce, car vous n'etes pas connecté </p>
+<%end%>
