@@ -6,14 +6,26 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :prénom %><br />
+    <%= f.text_field :prenom %>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <div class="field">
+    <%= f.label :nom %><br />
+    <%= f.text_field :nom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :promotion %><br />
+    <%= f.text_field :promotion %>
+  </div>
+
+    <div class="field">
+    <%= f.label :"numero de téléphone" %><br />
+    <%= f.text_field :numero %>
+  </div>
 
   <div class="field">
     <%= f.label :"mot de passe" %> <i>(Ne rien écrire si vous ne souhaitez pas le modifier)</i><br />
@@ -24,6 +36,15 @@
     <%= f.label :"répétez votre mot de passe" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
 
   <div class="field">
     <%= f.label :"Mot de passe actuel"%> <i>(Requis pour comfirmer vos modifications)</i><br />

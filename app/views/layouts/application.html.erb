@@ -25,13 +25,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <% if user_signed_in? %>
-                Logged in as <strong><%= current_user.email %></strong>.
-                <a class="navbar-brand" href="/annonces">Les annonces</a>
+
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
+           
+                <% if user_signed_in? %>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <a class="navbar-brand" href="/annonces">Les annonces</a>
                     <li>
                         <a href="/annonces/new">Créer une annonce</a>
                     </li>
@@ -41,11 +42,22 @@
                     <li>
                         <a href="/users/sign_out" data-method='delete'>Déconnexion</a>
                     </li>
+                    </ul>
+                    <li>
+
+                    <div class="right navbar-right" id="bs-example-navbar-collapse-1"> 
+                        <ul class="nav navbar-nav">
+                        <li>
+                        <a>
+                        Connecté en tant que 
+                        <strong><%= current_user.prenom %> <%= current_user.nom %></strong>
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <% else %>
+               <% else %>     
             <a class="navbar-brand" href="/annonces">Les annonces</a>
-            </div>
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -55,10 +67,11 @@
                         <a href="/users/sign_in">Se Connecter</a>
                     </li>
                 </ul>
+                </div>
             <% end %>
 
             <!-- /.navbar-collapse -->
-        </div>
+        
         <!-- /.container -->
     </nav>
 

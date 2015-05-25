@@ -5,14 +5,13 @@
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
             <center>
-            <h1>Bienvenue sur le Boncoin de l'iien</h1>
-            <p> etre iien c'est bien, partager ses biens c'est mieux</p>
+            <h2>Les Annonces du Boncoin de l'iien</h2>
             <!--<p><a class="btn btn-primary btn-large">Call to action!</a>
             </p>-->
             </center>
         </header>
 
-<hr>
+
 <%= @annonces.each do |annonce| %>
 <% if user_signed_in? %>
         <!-- Title -->

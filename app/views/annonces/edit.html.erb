@@ -1,12 +1,22 @@
 <div class="container">
     <header class="jumbotron hero-spacer">
     <center>
-    <h1>Editer Annonce</h1>
+    <% if current_user.id == @annonce.user_id %>
+    <h2>Editer Annonce</h2>
+
+
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @annonce %> |
-<%= link_to 'Back', annonces_path %>
+<%= link_to 'Voir', @annonce %> |
+<%= link_to 'Retour', annonces_path %>
+
+
+<%else%>
+<p> Vous ne pouvez modifier cette annonce car ce n'est pas la votre </p>
+<% end %>
+
 </center>
 </header>
 </div>
+

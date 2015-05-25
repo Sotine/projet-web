@@ -7,6 +7,7 @@ class AnnoncesController < ApplicationController
     @annonces = Annonce.all
   end
 
+
   # GET /annonces/1
   # GET /annonces/1.json
   def show
@@ -22,6 +23,9 @@ class AnnoncesController < ApplicationController
   def edit
   end
 
+  def contact
+    @annonces = Annonce.find(params[:id])
+  end
   # POST /annonces
   # POST /annonces.json
   def create
@@ -33,7 +37,7 @@ class AnnoncesController < ApplicationController
 
     respond_to do |format|
       if @annonce.save
-        format.html { redirect_to @annonce, notice: 'Annonce was successfully created.' }
+        format.html { redirect_to @annonce, notice: "L'Annonce a bien été crée" }
         format.json { render :show, status: :created, location: @annonce }
       else
         format.html { render :new }
@@ -47,7 +51,7 @@ class AnnoncesController < ApplicationController
   def update
     respond_to do |format|
       if @annonce.update(annonce_params)
-        format.html { redirect_to @annonce, notice: 'Annonce was successfully updated.' }
+        format.html { redirect_to @annonce, notice: "L'Annonce a bien été mise à jour" }
         format.json { render :show, status: :ok, location: @annonce }
       else
         format.html { render :edit }
@@ -61,7 +65,7 @@ class AnnoncesController < ApplicationController
   def destroy
     @annonce.destroy
     respond_to do |format|
-      format.html { redirect_to annonces_url, notice: 'Annonce was successfully destroyed.' }
+      format.html { redirect_to annonces_url, notice: "L'Annonce a bien été détruite" }
       format.json { head :no_content }
     end
   end

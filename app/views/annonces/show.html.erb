@@ -1,6 +1,9 @@
 <div class="container">
     <header class="jumbotron hero-spacer">
     <center>
+
+<% if user_signed_in? %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -14,13 +17,8 @@
 </p>
 
 <p>
-  <strong>Mis en ligne par:</strong>
-  <%= @annonce.user_id %>
-</p>
-
-<p>
   <strong>Prix:</strong>
-  <%= @annonce.prix %>
+  <%= @annonce.prix %>€
 </p>
 
 <p>
@@ -28,8 +26,21 @@
   <%= @annonce.image %>
 </p>
 
-<%= link_to 'Edit', edit_annonce_path(@annonce) %> |
-<%= link_to 'Back', annonces_path %>
+<p>
+  <strong>Auteur:</strong>
+  <%= @annonce.user.prenom %> <%= @annonce.user.nom %> <br>
+</p>
+	<% if current_user.id == @annonce.user_id %>
+	<%= link_to 'Editer', edit_annonce_path(@annonce) %> 
+	<%else%> 
+	<%= link_to 'Contacter', 
+	contact_path(@annonce) %>
+	<%end%> |
+	<%= link_to 'Retour', annonces_path %>
+	<%else%>
+	<p> Vous ne pouvez voir les détails de cette annonce, car vous n'etes pas connecté </p>
+	<%end%>
+
 	</center>
 	</header>
 </div>

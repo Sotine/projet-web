@@ -1,11 +1,16 @@
 <div class="container">
     <header class="jumbotron hero-spacer">
     <center>
-    	<h1>Nouvelle Annonce</h1>
+    	<% if user_signed_in? %>
+    	<h2>Nouvelle Annonce</h2>
 
 		<%= render 'form' %>
 
 		<%= link_to 'Retour', annonces_path %>
+
+		<%else %>
+		<p> Vous ne pouvez créez d'annonce sans etre connecté </p>
+		<%end%>
 	</center>
 	</header>
 </div>
