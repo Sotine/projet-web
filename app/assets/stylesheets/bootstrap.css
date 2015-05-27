@@ -169,6 +169,7 @@ fieldset {
   padding: .35em .625em .75em;
   margin: 0 2px;
   border: 1px solid #c0c0c0;
+  opacity:1;
 }
 legend {
   padding: 0;
@@ -1088,13 +1089,16 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background: url('shopping.jpg');
-  background-size:cover;
-  margin:0;
+  background: url('shopping.jpg'); no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.myBackground {
+  background-color: rgba(255,255,255, 0.5);
+  color: inherit;
+
 }
 
 }
@@ -4865,7 +4869,7 @@ a.badge:focus {
   padding: 30px 15px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eee;
+  background-color: #fff;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4883,7 +4887,7 @@ a.badge:focus {
 .container-fluid .jumbotron {
   border-radius: 6px;
 }
-.jumbotron .container {
+.jumbotron .containfffer {
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -4911,6 +4915,7 @@ a.badge:focus {
   -webkit-transition: border .2s ease-in-out;
        -o-transition: border .2s ease-in-out;
           transition: border .2s ease-in-out;
+
 }
 .thumbnail > img,
 .thumbnail a > img {
@@ -4925,6 +4930,7 @@ a.thumbnail.active {
 .thumbnail .caption {
   padding: 9px;
   color: #333;
+    opacity: 0.8;
 }
 .alert {
   padding: 15px;

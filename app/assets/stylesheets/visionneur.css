@@ -1,27 +1,26 @@
-#galerie-minimaliste:after {content:'cliquez sur la photo pour voir la suivante';display:block;width:100%;text-align:center;color:#555;line-height:12px;}
+#galerie-minimaliste:after {content:'cliquez sur la photo pour voir la suivante';display:block;width:100%;text-align:bottom;color:#555;line-height:12px;}
 #galerie-minimaliste {
-    background:white;
-    border:solid;
-    width:500px;
-    height:360px;
+    background:transparent;
+    border:transparent;
+    width:50%;
+    height:120%;
     margin:2em auto;
-    padding:0.5em;
-    box-shadow:0 0 5px black,inset 0 -250px  150px -150px  gray;
+    padding:0em;
+    box-shadow:0 0 35px white,inset 0 0px  0px 1px  white;
     position:relative;
     }
 #galerie-minimaliste div {
-    border:solid;
+    border:black;
     position:absolute;
-    top:30px;
-    width:400px;
-    height:300px;
-    left:55px;
+    top:0px;
+    width:100%;
+    height:101%;
+    left:0px;
     background:white;
     overflow:hidden;
-    box-shadow:0 0 1px black;
+    box-shadow:0 0 0px black;
 }
-#galerie-minimaliste img {vertical-align:top;border-radius:15em;overflow:hidden;}
-#galerie-minimaliste div p {position:absolute;top:0;left:400px;padding:0;line-height:auto;margin:0;cursor:pointer;outline:0;
+#galerie-minimaliste div p {position:relative;top:0;left:400px;padding:0;line-height:auto;margin:0;cursor:pointer;outline:0;
 -moz-transition:ease 1s;-webkit-transition:ease 1s;-moz-transition:ease  1s;opacity:0;}
  
 #galerie-minimaliste p:focus + p, #galerie-minimaliste div p:first-child {left:0;top:0;-moz-transition:ease 1s;-webkit-transition:ease 1s;-moz-transition:ease 1s;opacity:1;}
