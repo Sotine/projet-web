@@ -1,12 +1,12 @@
 <div class="container">
-    <header class="jumbotron hero-spacer">
+    <header class="jumbotron">
     <center>
     <% if current_user.id == @annonce.user_id %>
     <p> C'est ton annonce, si tu veux te contacter tu n'as qu'a prendre un mirroir</p>
 
 
 <%else%>
-<h2>Contact de l'annonceur</h2>
+<h2>Contacter l'annonceur</h2>
 <br>
 
 <p>
@@ -16,7 +16,7 @@
 
 <p>
   <strong>Téléphone :</strong>
-  <%= @annonce.user.numero %>
+  0<%= @annonce.user.numero %>
 </p>
 
 <p>

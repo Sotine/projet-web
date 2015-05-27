@@ -6,6 +6,7 @@ class CreateAnnonces < ActiveRecord::Migration
       t.integer :prix
       t.string :image
 
+
       t.timestamps null: false
     end
   end

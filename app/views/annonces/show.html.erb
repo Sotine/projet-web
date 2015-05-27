@@ -1,5 +1,5 @@
 <div class="container">
-    <header class="jumbotron hero-spacer">
+    <header class="jumbotron">
     <center>
 
 <% if user_signed_in? %>
@@ -23,9 +23,10 @@
 
 <div id="galerie-minimaliste">
 <div>
-<p tabindex="1"><img src="<%=@annonce.image%>" alt="<%=@annonce.titre%>" /></p>
-<p tabindex="1"><img src="<%=@annonce.image2%>" alt="<%=@annonce.titre%>" /></p>
-<p tabindex="1"><img src="<%=@annonce.image3%>" alt="<%=@annonce.titre%>" /></p>
+<p tabindex="1"><img src="<%=@annonce.image%>" style="max-width:100%; height:auto" /></p>
+<!--<p tabindex="1"><img src="<%=@annonce.photo.url(:thumb)%>" style="max-width:100%; height:auto" /></p>-->
+<p tabindex="2"><img src="<%=@annonce.image2%>" style="max-width:100%; height:auto" /></p>
+<p tabindex="3"><img src="<%=@annonce.image3%>" style="max-width:100%; height:auto" /></p>
 </div>
 </div>
 
@@ -41,8 +42,9 @@
 	<% if current_user.id == @annonce.user_id %>
 	<%= link_to 'Editer', edit_annonce_path(@annonce) %> 
 	<%else%> 
-	<%= link_to 'Contacter', 
-	contact_path(@annonce) %>
+	<%= link_to 'Signaler' %>
+| <%= link_to 'Contacter', 
+	contact_path(@annonce) %> 
 	<%end%> |
 	<%= link_to 'Retour', annonces_path %>
 	<%else%>
